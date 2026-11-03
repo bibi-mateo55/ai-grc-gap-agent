@@ -1,0 +1,79 @@
+{
+  "framework": "NIS2",
+  "full_name": "Directive (EU) 2022/2555 (NIS2) — cybersecurity risk-management, governance and reporting obligations",
+  "note": "Requirements are paraphrased summaries for assessment purposes, not the legal text. Always consult the official Directive and the national transposition law.",
+  "controls": [
+    {
+      "id": "NIS2-20",
+      "title": "Governance: management body accountability",
+      "requirement": "The management body approves the cybersecurity risk-management measures, oversees their implementation and can be held liable for infringements. Members of the management body follow cybersecurity training.",
+      "related_iso27001": ["5.1", "6.3"]
+    },
+    {
+      "id": "NIS2-21a",
+      "title": "Risk analysis and information system security policies",
+      "requirement": "Policies on risk analysis and information system security are defined, approved and maintained.",
+      "related_iso27001": ["5.1", "5.9"]
+    },
+    {
+      "id": "NIS2-21b",
+      "title": "Incident handling",
+      "requirement": "Processes exist to prevent, detect, analyse, contain and respond to incidents.",
+      "related_iso27001": ["5.24", "5.26", "8.15", "8.16"]
+    },
+    {
+      "id": "NIS2-21c",
+      "title": "Business continuity and crisis management",
+      "requirement": "Business continuity is managed, including backup management, disaster recovery and crisis management.",
+      "related_iso27001": ["5.29", "5.30", "8.13"]
+    },
+    {
+      "id": "NIS2-21d",
+      "title": "Supply chain security",
+      "requirement": "Security aspects of relationships with direct suppliers and service providers are assessed and managed.",
+      "related_iso27001": ["5.19", "5.23"]
+    },
+    {
+      "id": "NIS2-21e",
+      "title": "Secure acquisition, development and maintenance; vulnerability handling",
+      "requirement": "Security is built into the acquisition, development and maintenance of network and information systems, including vulnerability handling and disclosure.",
+      "related_iso27001": ["8.8", "8.25", "8.28", "8.29"]
+    },
+    {
+      "id": "NIS2-21f",
+      "title": "Effectiveness assessment of security measures",
+      "requirement": "Policies and procedures exist to assess whether the cybersecurity risk-management measures are effective (e.g. audits, tests, metrics).",
+      "related_iso27001": ["8.29"]
+    },
+    {
+      "id": "NIS2-21g",
+      "title": "Cyber hygiene and security training",
+      "requirement": "Basic cyber hygiene practices are applied and staff receive cybersecurity training.",
+      "related_iso27001": ["6.3", "8.1", "8.7"]
+    },
+    {
+      "id": "NIS2-21h",
+      "title": "Cryptography and encryption",
+      "requirement": "Policies and procedures govern the use of cryptography and, where appropriate, encryption.",
+      "related_iso27001": ["8.24"]
+    },
+    {
+      "id": "NIS2-21i",
+      "title": "HR security, access control and asset management",
+      "requirement": "Human resources security, access control policies and asset management are in place.",
+      "related_iso27001": ["5.9", "5.15", "5.18", "6.5", "8.2"]
+    },
+    {
+      "id": "NIS2-21j",
+      "title": "Multi-factor authentication and secured communications",
+      "requirement": "Multi-factor or continuous authentication is used where appropriate, along with secured voice, video and text communications and secured emergency communication systems.",
+      "related_iso27001": ["5.17", "8.5"]
+    },
+    {
+      "id": "NIS2-23",
+      "title": "Incident reporting obligations",
+      "requirement": "Significant incidents are reported to the CSIRT/competent authority: early warning within 24 hours, incident notification within 72 hours and a final report within one month.",
+      "related_iso27001": ["5.24", "5.26"]
+    }
+  ]
+}

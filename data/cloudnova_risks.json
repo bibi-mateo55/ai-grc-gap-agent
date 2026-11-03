@@ -1,0 +1,85 @@
+{
+  "source": "iso27005-risk-register project (same fictional organisation)",
+  "risks": [
+    {
+      "id": "R-01",
+      "title": "Phishing / theft of cloud admin credentials",
+      "level": 20
+    },
+    {
+      "id": "R-02",
+      "title": "Customer data leak via misconfigured storage bucket",
+      "level": 15
+    },
+    {
+      "id": "R-03",
+      "title": "Exploitation of a web vulnerability (e.g. SQL injection)",
+      "level": 15
+    },
+    {
+      "id": "R-04",
+      "title": "Ransomware on internal systems",
+      "level": 12
+    },
+    {
+      "id": "R-05",
+      "title": "Compromised third-party dependency (supply chain)",
+      "level": 12
+    },
+    {
+      "id": "R-06",
+      "title": "GDPR non-compliance (rights, breach notification)",
+      "level": 12
+    },
+    {
+      "id": "R-07",
+      "title": "Over-permissive cloud IAM roles",
+      "level": 12
+    },
+    {
+      "id": "R-08",
+      "title": "Tenant isolation failure (one customer sees another's data)",
+      "level": 10
+    },
+    {
+      "id": "R-09",
+      "title": "Unable to restore backups",
+      "level": 10
+    },
+    {
+      "id": "R-10",
+      "title": "Denial-of-service (DDoS) attack",
+      "level": 9
+    },
+    {
+      "id": "R-11",
+      "title": "Key-person dependency (single admin)",
+      "level": 9
+    },
+    {
+      "id": "R-12",
+      "title": "Customer account takeover",
+      "level": 9
+    },
+    {
+      "id": "R-13",
+      "title": "Insider threat: departing employee exfiltrates data",
+      "level": 8
+    },
+    {
+      "id": "R-14",
+      "title": "Prolonged cloud provider outage (AWS region)",
+      "level": 8
+    },
+    {
+      "id": "R-15",
+      "title": "Shadow IT / unsanctioned SaaS",
+      "level": 6
+    },
+    {
+      "id": "R-16",
+      "title": "Laptop theft or loss",
+      "level": 6
+    }
+  ]
+}

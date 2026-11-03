@@ -1,0 +1,31 @@
+{
+  "organisation": "CloudNova (fictional)",
+  "description": "European SME (~45 employees) providing a multi-tenant B2B project-management SaaS platform hosted on AWS (single region). Processes customer personal data and documents. In scope of GDPR and NIS2 as a digital service provider.",
+  "disclaimer": "Entirely fictional organisation and evidence, created for a portfolio project.",
+  "evidence": [
+    {"id": "E-01", "area": "governance", "source": "Interview with CEO", "statement": "There is no formally approved information security policy. The CTO wrote a draft security guideline in 2025 that was never approved by management."},
+    {"id": "E-02", "area": "governance", "source": "Board minutes Q2", "statement": "The board has not discussed cybersecurity risk in the last 12 months. No board member has received cybersecurity training."},
+    {"id": "E-03", "area": "risk", "source": "Risk register (iso27005-risk-register project)", "statement": "A first information-security risk register (16 risks, ISO 27005 method) was produced this year. It has not yet been formally approved or linked to a treatment plan."},
+    {"id": "E-04", "area": "assets", "source": "IT spreadsheet", "statement": "A spreadsheet lists laptops and SaaS subscriptions, but cloud resources, data stores and asset owners are not recorded. Last updated eight months ago."},
+    {"id": "E-05", "area": "access", "source": "AWS IAM export", "statement": "The AWS root account has no MFA enabled. Two engineers share one administrator IAM user. Several IAM roles have AdministratorAccess attached."},
+    {"id": "E-06", "area": "access", "source": "Google Workspace admin console", "statement": "MFA is enforced for all employee Google Workspace accounts, which are used as SSO for most internal tools."},
+    {"id": "E-07", "area": "access", "source": "HR / IT interview", "statement": "There is no offboarding checklist. Access removal for leavers depends on the CTO remembering; one former contractor still had GitHub access three months after leaving."},
+    {"id": "E-08", "area": "access", "source": "Interview with CTO", "statement": "No periodic access reviews are performed for AWS, GitHub or the production database."},
+    {"id": "E-09", "area": "authentication", "source": "Product documentation", "statement": "Customer users log in with email and password (minimum 8 characters). MFA is not offered to customers."},
+    {"id": "E-10", "area": "cloud", "source": "AWS Config / S3 inventory", "statement": "One S3 bucket containing exported customer reports was publicly readable until last month. Default encryption is enabled on the production database but not on all S3 buckets. No CSPM tool is used."},
+    {"id": "E-11", "area": "cloud", "source": "Architecture diagram", "statement": "The platform runs in a single AWS region with a multi-AZ database. There is no documented disaster-recovery plan for a full region outage."},
+    {"id": "E-12", "area": "development", "source": "GitHub repository settings", "statement": "Pull requests require one reviewer before merging to main. There is no SAST, DAST or dependency scanning in the CI/CD pipeline. No secure-coding guideline exists."},
+    {"id": "E-13", "area": "development", "source": "Pentest report (2024)", "statement": "One external penetration test was performed in 2024; two high findings (IDOR and missing rate limiting) are recorded as fixed but were never retested."},
+    {"id": "E-14", "area": "vulnerabilities", "source": "Interview with DevOps engineer", "statement": "Container images are rebuilt monthly. OS patches on the two remaining EC2 instances are applied manually and irregularly. No vulnerability scanner is in place."},
+    {"id": "E-15", "area": "logging", "source": "AWS console", "statement": "AWS CloudTrail is enabled in the main region and logs are kept for 90 days. Application logs go to CloudWatch, but nobody reviews them and no alerts are configured for security events."},
+    {"id": "E-16", "area": "incident", "source": "Interview with CTO", "statement": "There is no written incident response plan or defined roles. Incidents are handled ad hoc in a Slack channel. The team is not aware of the NIS2 24h/72h reporting deadlines."},
+    {"id": "E-17", "area": "backup", "source": "AWS Backup console", "statement": "Automated daily database snapshots are kept for 14 days. A restore has never been tested and RPO/RTO targets are not defined."},
+    {"id": "E-18", "area": "endpoints", "source": "MDM report", "statement": "About 70% of company laptops are enrolled in MDM with full-disk encryption enforced. Contractors use personal devices without controls. Built-in antivirus is used; there is no EDR."},
+    {"id": "E-19", "area": "training", "source": "HR records", "statement": "New employees watch a 20-minute security video during onboarding. There is no annual refresher or phishing simulation."},
+    {"id": "E-20", "area": "suppliers", "source": "Procurement interview", "statement": "Suppliers are chosen on price and features. No security questionnaire or contractual security clauses are used, except AWS standard terms. There is no list of critical suppliers."},
+    {"id": "E-21", "area": "privacy", "source": "Website / legal", "statement": "A privacy policy is published and a data processing agreement template exists for customers. No DPO is appointed, there is no record of processing activities and no breach-notification procedure."},
+    {"id": "E-22", "area": "cryptography", "source": "Interview with CTO", "statement": "TLS 1.2+ is enforced on all public endpoints. Encryption keys are managed by AWS KMS with default settings. There is no written cryptography policy."},
+    {"id": "E-23", "area": "communications", "source": "Interview with CEO", "statement": "Internal communication uses Slack and Google Meet with SSO. There is no out-of-band emergency communication channel if Google Workspace or Slack is unavailable."},
+    {"id": "E-24", "area": "effectiveness", "source": "Interview with CTO", "statement": "No security metrics or KPIs are tracked and no internal audit of security controls has been performed."}
+  ]
+}
