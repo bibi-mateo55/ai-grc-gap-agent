@@ -4,13 +4,13 @@ An **AI agent that performs a compliance gap analysis** of an organisation again
 
 The agent reads the organisation's evidence (interview notes, configuration exports, policies), assesses every control, links each gap to the risk register and produces a prioritised report and an Excel workbook — with **guardrails that stop it from inventing evidence** and a full **audit trail** of every action.
 
-> 🎯 **Why this project?** I'm focused on cybersecurity governance and GRC. Gap analyses are slow, repetitive and evidence-heavy — a good fit for AI assistance, *if* the output stays traceable and a human stays accountable. This project explores where AI genuinely helps a GRC analyst, and where it must not be trusted blindly.
+>  **Why this project?** I'm focused on cybersecurity governance and GRC. Gap analyses are slow, repetitive and evidence-heavy — a good fit for AI assistance, *if* the output stays traceable and a human stays accountable. This project explores where AI genuinely helps a GRC analyst, and where it must not be trusted blindly.
 
-> ⚠️ The organisation (**CloudNova**) and all evidence are **fictional**. It's the same company as my [ISO 27005 risk register](https://github.com/bibi-mateo55/iso27005-risk-register) project.
+> The organisation (**CloudNova**) and all evidence are **fictional**. It's the same company as my [ISO 27005 risk register](https://github.com/bibi-mateo55/iso27005-risk-register) project.
 
 ---
 
-## 🧭 What it does
+## What it does
 
 ```mermaid
 flowchart LR
@@ -33,7 +33,7 @@ flowchart LR
 
 ---
 
-## 🛡️ Guardrails — the important part
+## Guardrails — the important part
 
 Using AI in compliance is risky: a confident, made-up finding is worse than no finding. The agent is designed so that its output stays **traceable, verifiable and reviewable**:
 
@@ -54,7 +54,7 @@ These guardrails are covered by offline tests (`tests/test_guardrails.py`).
 
 ---
 
-## 📄 Sample output
+## Sample output
 
 See [`examples/sample_run/`](examples/sample_run/):
 
@@ -68,7 +68,7 @@ Sample result for CloudNova vs NIS2: **12/12 requirements assessed, 0 implemente
 
 ---
 
-## 🚀 Run it
+## Run it
 
 Requires **Python 3.10+**. The Claude Agent SDK bundles the Claude Code CLI, so nothing else is needed.
 
@@ -103,7 +103,7 @@ pip install pytest && python -m pytest -q
 
 ---
 
-## 🗂️ Project structure
+## Project structure
 
 ```
 gap_agent/
@@ -125,13 +125,13 @@ tests/test_guardrails.py       # offline tests
 
 ---
 
-## 🔗 Cross-framework mapping
+##  Cross-framework mapping
 
 Each NIS2 requirement lists related ISO 27001 controls (e.g. NIS2 Art. 21(2)(j) MFA → ISO 27001 5.17, 8.5), so an organisation that already works towards ISO 27001 can reuse that work for NIS2.
 
 ---
 
-## ⚖️ Limitations — what AI should *not* do here
+## Limitations — what AI should *not* do here
 
 - **It does not replace an auditor.** It drafts; a qualified person validates, especially anything flagged 🔍.
 - **It's only as good as the evidence.** Missing or outdated evidence leads to wrong conclusions; real assessments need interviews and sampling.
@@ -141,12 +141,7 @@ Each NIS2 requirement lists related ISO 27001 controls (e.g. NIS2 Art. 21(2)(j) 
 
 ---
 
-## 🛣️ Roadmap
 
-- [ ] Publish a live-run report alongside the hand-written sample
-- [ ] Evidence ingestion from documents (PDF/DOCX) instead of JSON
-- [ ] Second-pass "reviewer" agent that challenges low-confidence findings
-- [ ] Export a remediation plan with owners and deadlines
 
 ---
 
