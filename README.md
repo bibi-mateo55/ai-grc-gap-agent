@@ -56,13 +56,30 @@ These guardrails are covered by offline tests (`tests/test_guardrails.py`).
 
 ## Sample output
 
+### Live run (real agent output)
+
+See [`examples/live_run/`](examples/live_run/) — produced by a real run of the agent on 4 Nov 2026 (`--model sonnet`, **34 turns, $0.11**):
+
+- [`gap_analysis_nis2.md`](examples/live_run/gap_analysis_nis2.md) — prioritised gap report
+- [`gap_analysis_nis2.xlsx`](examples/live_run/gap_analysis_nis2.xlsx) — workbook
+- [`audit_log_nis2.jsonl`](examples/live_run/audit_log_nis2.jsonl) — every tool call the agent made
+
+Result for CloudNova vs NIS2: **12/12 requirements assessed, 0 implemented, 8 partial, 4 not implemented — compliance score 33.3%, 0 guardrail rejections.** Top gaps: no management-body oversight, no incident response or NIS2 reporting process, and no MFA on the AWS root account.
+
+**Human review notes** (what I checked as the analyst):
+- The agent was slightly **more lenient** than my manual baseline (8 partial vs 6). Borderline calls such as 21b (logs exist but nobody reviews them) are exactly where a human must decide whether "partial" is justified.
+- Every finding cited existing evidence IDs, and all 12 controls were covered — the guardrails and coverage check held.
+- The AI-generated executive summary contained a counting slip that the agent corrected itself mid-sentence ("five… precisely, four"). A reminder that narrative text needs proofreading even when the structured data is correct.
+
+### Hand-written sample (offline demo)
+
 See [`examples/sample_run/`](examples/sample_run/):
 
 - [`gap_analysis_nis2.md`](examples/sample_run/gap_analysis_nis2.md) — prioritised gap report
 - [`gap_analysis_nis2.xlsx`](examples/sample_run/gap_analysis_nis2.xlsx) — workbook (gap analysis, summary, evidence)
 - [`audit_log_nis2.jsonl`](examples/sample_run/audit_log_nis2.jsonl) — audit trail
 
-> **Transparency note:** the sample assessments were **hand-written** to illustrate the output format, then replayed through the same tools and guardrails with `--offline-demo`. They were **not** produced by a live AI run. Run the agent yourself (below) to generate a live report.
+> **Transparency note:** the sample assessments were **hand-written** to illustrate the output format, then replayed through the same tools and guardrails with `--offline-demo`. They were **not** produced by a live AI run. For real agent output, see the live run above.
 
 Sample result for CloudNova vs NIS2: **12/12 requirements assessed, 0 implemented, 6 partial, 6 not implemented — compliance score 25%.** Top gaps: no incident response or NIS2 reporting process, no MFA on the cloud root account, and no management-body oversight.
 
